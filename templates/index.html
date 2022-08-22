@@ -20,9 +20,19 @@
         <div id="Premiere"><h1>Premiere visite sur le site?</h1>
         <p>Faites un tour sur notre <a href = "Construire-ordinateur">
             outil d'aide à monter un ordinateur!</a></p></div>
-        <h1>Sur le Blog...</h1>
-        <section>Article</section>
-        <a href = "Blog">Voir tous les articles de blog</a>
+        <section>
+            <h1>Sur le Blog...</h1>
+            {% for article in liste_articles %}
+            <article>
+                <h1>{{article.titre}}</h1>
+                {% for i in range(2) %}
+                <p>{{article.tableau_paragraphes()[i]}}</p>
+                {% endfor %}
+                <a href = "article{{i}}">Lire l'article</a>
+            </article>
+            {% endfor %}
+            <a href = "Blog">Voir tous les articles de blog</a>
+        </section>
     </main>
     <footer>
         <p><b>2022 - OrdinaLand</b></p>
