@@ -2,24 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OrdinaLand</title>
+    <title>Ordinaland</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+     <style>footer {position:fixed;}</style>
 </head>
 <body>
-    <nav>OrdinaLand <a class=boutton href = "/">Acceuil</a>
+ <nav>OrdinaLand <a class=boutton href = "/">Acceuil</a>
                  <a class=boutton href = "/construire-ordinateur">Construire un ordinateur</a>
                  <a class=boutton href = "/blog">Blog</a>
-                 <a class=boutton href = Glossaire>Glossaire</a>
+                 <a class=boutton href = /glossaire>Glossaire</a>
                  <a class=boutton href = "/contact">Contact</a></nav>
-
     <header>
         <h1>OrdinaLand</h1>
-        <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
+        <p><u><b>La</b></u> référence en matière d'ordinateurs</p>
     </header>
+    <main>
+        <h1>Sur le blog...</h1>
+        <section>
+            {% for i in range(long) %}
+            <article>
+                <h1>{{pages[i].titre}}</h1>
+                {% for y in range(2) %}
+                <p>{{pages[i].tableau_paragraphes()[y]}}</p>
+                {% endfor %}
+                <a href = "/article/{{i}}">Lire l'article</a>
+            </article>
+            {% endfor %}
+            <nav>
+                {% for i in range(nbr_pages) %}
+                <a href="/blog/{{i+1}}"> {{i+1}} </a>
+                {% endfor %}
+            </nav>
+        </section>
 
-<footer><p><b>2022 - OrdinaLand</b></p>
+    </main>
+    <footer>
+        <p><b>2022 - OrdinaLand</b></p>
     </footer>
-
 
 </body>
 </html>
