@@ -10,7 +10,7 @@
 
  <nav>OrdinaLand <a class=boutton href = "/">Acceuil</a>
                  <a class=boutton href = "/construire-ordinateur">Construire un ordinateur</a>
-                 <a class=boutton href = "Blog">Blog</a>
+                 <a class=boutton href = "/blog">Blog</a>
                  <a class=boutton href = Glossaire>Glossaire</a>
                  <a class=boutton href = "/contact">Contact</a></nav>
 
@@ -31,10 +31,10 @@
                 {% for i in range(2) %}
                 <p>{{article.tableau_paragraphes()[i]}}</p>
                 {% endfor %}
-                <a href = "article{{i}}">Lire l'article</a>
+                <a href = "/blog">Lire l'article</a>
             </article>
             {% endfor %}
-            <a href = "Blog">Voir tous les articles de blog</a>
+            <a href = "/blog">Voir tous les articles de blog</a>
         </section>
     </main>
     <footer>

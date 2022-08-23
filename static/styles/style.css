@@ -21,6 +21,7 @@ nav {
     text-decoration: none;
     border: thick double #582D15;
     font-size: 20px;
+    width: 500px;
     margin: 30px;
     background-color: #923500;
     color: black;
@@ -56,6 +57,13 @@ h1 {
    width: 500px;
    height: 100px;
 }
+
+article {
+    background-color: #F8C0A0;
+    border: thick double #582D15;
+    margin-bottom: 20px;
+    }
+
 
 
 footer {
