@@ -21,11 +21,11 @@
         <section>
             {% for i in range(long) %}
             <article>
-                <h1>{{test[i].titre}}</h1>
+                <h1>{{pages[i].titre}}</h1>
                 {% for y in range(2) %}
-                <p>{{test[i].tableau_paragraphes()[y]}}</p>
+                <p>{{pages[i].tableau_paragraphes()[y]}}</p>
                 {% endfor %}
-                <a href = "article{{i}}">Lire l'article</a>
+                <a href = "/article/{{i}}">Lire l'article</a>
             </article>
             {% endfor %}
             <nav>

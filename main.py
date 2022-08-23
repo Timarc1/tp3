@@ -17,10 +17,10 @@ def index():
 @app.route("/blog/<n>")
 def blog(n):
     nbr_pages = math.ceil(len(articles) / 3)
-    test = paginate.Page(articles,n,3)
-    long = len(test)
+    pages = paginate.Page(articles,n,3)
+    long = len(pages)
 
-    return render_template("blog.html",test=test,long=long,nbr_pages=nbr_pages)
+    return render_template("blog.html",pages=pages,long=long,nbr_pages=nbr_pages)
 
 @app.route("/contact")
 def contact():
