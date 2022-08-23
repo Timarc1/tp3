@@ -3,8 +3,8 @@ import paginate
 from ordinaland import *
 from flask import Flask, request, render_template
 app = Flask(__name__)
-
 from math import ceil
+
 @app.route("/")
 def index():
     article1 = (articles[len(articles) - 1])
@@ -14,7 +14,6 @@ def index():
 
     return render_template("index.html",liste_articles=liste_articles)
 
-
 @app.route("/blog/<n>")
 def blog(n):
     nbr_pages = math.ceil(len(articles) / 3)
@@ -23,13 +22,19 @@ def blog(n):
 
     return render_template("blog.html",pages=pages,long=long,nbr_pages=nbr_pages)
 
+@app.route("/article/<n>")
+def article(n):
+    m = int(n)
+    bon_article = articles[m]
+    return render_template("article.html",bon_article=bon_article)
+
 @app.route("/construire-ordinateur")
 def construire():
     return render_template("construire-ordinateur.html")
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
-
 
 @app.route("/glossaire")
 def glossaire():
