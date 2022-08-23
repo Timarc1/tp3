@@ -7,9 +7,9 @@ from random import choice
 from math import ceil
 @app.route("/")
 def index():
-    article1 = choice(articles)
-    article2 = choice(articles)
-    article3 = choice(articles)
+    article1 = (articles[len(articles) - 1])
+    article2 = (articles[len(articles) - 2])
+    article3 = (articles[len(articles) - 3])
     liste_articles = [article1,article2,article3]
 
     return render_template("index.html",liste_articles=liste_articles)
