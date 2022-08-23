@@ -26,7 +26,7 @@
                 {% for y in range(2) %}
                 <p>{{pages[i].tableau_paragraphes()[y]}}</p>
                 {% endfor %}
-                <a href = "/article/{{i}}">Lire l'article</a>
+                <a href = "/article/{{pages[i].numero}}">Lire l'article</a>
             </article>
             {% endfor %}
             <nav>
