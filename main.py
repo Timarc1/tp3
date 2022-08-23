@@ -1,24 +1,26 @@
+import math
+import paginate
 from ordinaland import *
 from flask import Flask, request, render_template
 app = Flask(__name__)
 from random import choice
-
+from math import ceil
 @app.route("/")
 def index():
-    article1 = (articles[len(articles)-1])
-    article2 = (articles[len(articles)-2])
-    article3 = (articles[len(articles)-3])
+    article1 = choice(articles)
+    article2 = choice(articles)
+    article3 = choice(articles)
     liste_articles = [article1,article2,article3]
 
     return render_template("index.html",liste_articles=liste_articles)
 
-@app.route("/construire-ordinateur")
-def construire():
-    return render_template("construire-ordinateur.html")
+@app.route("/blog/<n>")
+def blog(n):
+    nbr_pages = math.ceil(len(articles) / 3)
+    test = paginate.Page(articles,n,3)
+    long = len(test)
 
-@app.route("/blog")
-def blog():
-    return render_template("blog.html")
+    return render_template("blog.html",test=test,long=long,nbr_pages=nbr_pages)
 
 @app.route("/contact")
 def contact():
