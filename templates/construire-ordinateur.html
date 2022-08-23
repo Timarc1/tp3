@@ -13,11 +13,29 @@
                  <a class=boutton href = /glossaire>Glossaire</a>
                  <a class=boutton href = "/contact">Contact</a>
     </nav>
-
      <header>
         <h1 id="nom">OrdinaLand</h1>
         <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
     </header>
+    <main>
+        <h1>Monter votre ordinateur</h1>
+        <p>Cette page sert d'assistant pour choisir les composantes de votre futur ordinateur</p>
+        <!#https://realpython.com/iterate-through-dictionary-python/>
+        {% for key,value in choix_composantes.items() %}
+        <div>
+            <h2>{{key}}<a href="/glossaire/">(description)</a></h2>
+            <!##https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form>
+            {% for composante in value %}
+            <form method="post">
+                    <label><input type="radio" name="{{key}}" value="{{key}}"><u>{{composante.prix}}$</u> - {{composante.description}} <a href="{{composante.lien}}">[voir]</a> </label>
+            </form>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <section>
+            <button type="submit">Calculer le prix!</button>
+        </section>
+    </main>
     <footer>
         <p><b>2022 - OrdinaLand</b></p>
     </footer>

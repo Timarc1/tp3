@@ -5,6 +5,9 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 from math import ceil
 
+
+
+
 @app.route("/")
 def index():
     article1 = (articles[len(articles) - 1])
@@ -30,7 +33,7 @@ def article(n):
 
 @app.route("/construire-ordinateur")
 def construire():
-    return render_template("construire-ordinateur.html")
+    return render_template("construire-ordinateur.html",choix_composantes=choix_composantes)
 
 @app.route("/contact")
 def contact():
