@@ -60,11 +60,11 @@ def afficherOrdinateur():
     ordi = Ordinateur(c)
 
     code_postale = request.form["postal"]
-    code_postale = code_postale.strip()
-    if len(code_postale) > 6 or len(code_postale) < 6 :
-        code_postale = False
+    code_postale = code_postale.replace(" ", "")
+    if len(code_postale) == 6 and code_postale[:6:2].isalpha() and code_postale[1:6:2].isnumeric():
+        code_postale = True
     else:
-        code_postale=True
+        code_postale= False
     return render_template("afficher-ordinateur.html",
                            ordi=ordi,
                            code_postale=code_postale)

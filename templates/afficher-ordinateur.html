@@ -21,11 +21,12 @@
     {% for composante in ordi.composantes %}
     <p>- {{composante.description}}</p>
     {% endfor %}
+
         {% if code_postale ==true %}
         <p>Livraison : 12.99$</p>
         <p>Sous-total : {{ordi.sous_total()}}$</p>
-    <p>Taxes : {{ordi.taxes()}}$</p>
-    <p>Total : {{ordi.total()}}$</p>
+        <p>Taxes : {{ordi.taxes()}}$</p>
+        <p>Total : {{ordi.total()+12.99}}$</p>
         {% else %}
     <p>Sous-total : {{ordi.sous_total()}}$</p>
     <p>Taxes : {{ordi.taxes()}}$</p>
