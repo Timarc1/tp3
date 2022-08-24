@@ -42,11 +42,40 @@ def construire():
     return render_template("construire-ordinateur.html",
                            choix_composantes=choix_composantes)
 
+
+@app.route("/afficher-ordinateur", methods=["POST"])
+def afficherOrdinateur():
+    composantes = []
+    c = []
+    for key in choix_composantes:
+        try:
+            composantes.append(request.form[key])
+        except:
+            pass
+    for composante in composantes:
+        for key,values in choix_composantes.items():
+            for t in values:
+                if composante == t.description:
+                    c.append(Composante(t.description,t.prix,t.lien))
+    ordi = Ordinateur(c)
+
+    code_postale = request.form["postal"]
+    code_postale = code_postale.strip()
+    if len(code_postale) > 6 or len(code_postale) < 6 :
+        code_postale = False
+    else:
+        code_postale=True
+    return render_template("afficher-ordinateur.html",
+                           ordi=ordi,
+                           code_postale=code_postale)
+
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
-@app.route("/glossaire")cd
+
+@app.route("/glossaire")
 def mot_cle():
     mot = []
     for definition in glossaire:

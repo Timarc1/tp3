@@ -17,20 +17,21 @@
         <h1 id="nom">OrdinaLand</h1>
         <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
     </header>
+
     <main>
     <h1>Monter votre ordinateur</h1>
     <p>Cette page sert d'assistant pour choisir les composantes de votre futur ordinateur</p>
     <!#https://realpython.com/iterate-through-dictionary-python/>
     <form method="POST" action="/afficher-ordinateur">
     {% for key,value in choix_composantes.items() %}
-    <h2>{{key}}<a href="/glossaire/{{key}}">(description)</a></h2>
+    <h2>{{key}}<a id=description href="/glossaire/{{key}}">(description)</a></h2>
     <section>
         <!##https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form>
 
         {% for composante in value %}
                 <div>
-                <input type="radio" name="{{key}}" value="{{composante}}" id="{{key}}">
-                <label for="{{key}}"><u>{{composante.prix}}$</u> - {{composante.description}} <a href="{{composante.lien}}">[voir]</a></label>
+                <input type="radio" name="{{key}}" value="{{composante.description}}" id="ordinateur">
+                <label for="ordinateur"><u>{{composante.prix}}$</u> - {{composante.description}} <a href="{{composante.lien}}">[voir]</a></label>
                 </div>
         {% endfor %}
 

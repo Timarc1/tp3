@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OrdinaLand</title>
+ <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+   <nav>OrdinaLand <a class=boutton href = "/">Acceuil</a>
+                 <a class=boutton href = "/construire-ordinateur">Construire un ordinateur</a>
+                 <a class=boutton href = "/blog/1">Blog</a>
+                 <a class=boutton href = /glossaire>Glossaire</a>
+                 <a class=boutton href = "/contact">Contact</a></nav>
+
+    <header>
+        <h1>OrdinaLand</h1>
+        <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
+    </header>
+    <main>
+    <h1>Votre ordinateur</h1>
+    {% for composante in ordi.composantes %}
+    <p>- {{composante.description}}</p>
+    {% endfor %}
+        {% if code_postale ==true %}
+        <p>Livraison : 12.99$</p>
+        <p>Sous-total : {{ordi.sous_total()}}$</p>
+    <p>Taxes : {{ordi.taxes()}}$</p>
+    <p>Total : {{ordi.total()}}$</p>
+        {% else %}
+    <p>Sous-total : {{ordi.sous_total()}}$</p>
+    <p>Taxes : {{ordi.taxes()}}$</p>
+    <p>Total : {{ordi.total()}}$</p>
+        {% endif %}
+</main>
+
+</body>
+</html>

@@ -45,29 +45,30 @@ class Article:
 
 
 class Ordinateur:
-    def __init__(self):
-        self.composantes = []
+    def __init__(self, description):
+        self.composantes = description
 
     def sous_total(self):
-        # TODO
-        print("TODO: calculer le sous-total en additionnant le prix de toutes les composantes")
+        """
+        calcule le sous-total en additionnant le prix de toutes les composantes")
+        """
         prix_total = 0
         for composante in self.composantes:
             prix_total += composante.prix
-        return prix_total
+        return round(prix_total, 2)
 
 
     def taxes(self):
         """Calcule les taxes """
         
         taxe = 0.15 * self.sous_total()
-        return taxe
+        return round(taxe,2)
 
 
     def total(self):
         """Calcule le montant avec taxes """
-        total = self.sous_total() + self.taxes()
-        return total
+        total = (self.sous_total() + (self.taxes()))
+        return round(total, 2)
 
 
 class Composante():
