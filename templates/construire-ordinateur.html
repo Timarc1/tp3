@@ -18,24 +18,33 @@
         <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
     </header>
     <main>
-        <h1>Monter votre ordinateur</h1>
-        <p>Cette page sert d'assistant pour choisir les composantes de votre futur ordinateur</p>
-        <!#https://realpython.com/iterate-through-dictionary-python/>
-        {% for key,value in choix_composantes.items() %}
-        <div>
-            <h2>{{key}}<a href="/glossaire/{{key}}">(description)</a></h2>
-            <!##https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form>
-            {% for composante in value %}
-            <form method="post">
-                    <label><input type="radio" name="{{key}}" value="{{key}}"><u>{{composante.prix}}$</u> - {{composante.description}} <a href="{{composante.lien}}">[voir]</a> </label>
-            </form>
-            {% endfor %}
-        </div>
+    <h1>Monter votre ordinateur</h1>
+    <p>Cette page sert d'assistant pour choisir les composantes de votre futur ordinateur</p>
+    <!#https://realpython.com/iterate-through-dictionary-python/>
+    <form method="POST" action="/afficher-ordinateur">
+    {% for key,value in choix_composantes.items() %}
+    <h2>{{key}}<a href="/glossaire/{{key}}">(description)</a></h2>
+    <section>
+        <!##https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form>
+
+        {% for composante in value %}
+                <div>
+                <input type="radio" name="{{key}}" value="{{composante}}" id="{{key}}">
+                <label for="{{key}}"><u>{{composante.prix}}$</u> - {{composante.description}} <a href="{{composante.lien}}">[voir]</a></label>
+                </div>
         {% endfor %}
-        <section>
-            <button type="submit">Calculer le prix!</button>
-        </section>
+
+    </section>
+    {% endfor %}
+    <section>
+        <p>Pour ajouter la livraison, entrez votre code postal : <input type="text" name="postal"></p>
+    </section>
+    <section>
+        <button type="submit" name="submit_button">Calculer le prix!</button>
+    </section>
+    </form>
     </main>
+
     <footer>
         <p><b>2022 - OrdinaLand</b></p>
     </footer>

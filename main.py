@@ -46,7 +46,7 @@ def construire():
 def contact():
     return render_template("contact.html")
 
-@app.route("/glossaire")
+@app.route("/glossaire")cd
 def mot_cle():
     mot = []
     for definition in glossaire:
