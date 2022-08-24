@@ -27,13 +27,14 @@
         {% endfor %}
         <h1>Plus d'articles...</h1>
         {% if bon_article.numero > 0 %}
-        <a href="/article/{{bon_article.numero - 1}}"><< Article précédent</a>
+        <p class="plus_article"><a href="/article/{{bon_article.numero - 1}}">Article précédent - ajouter titre</a></p>
         {% endif %}
         {% if bon_article.numero < 12 %}
-        <a href="/article/{{bon_article.numero + 1}}">>> Article Suivant</a>
+        <p class="plus_article"><a href="/article/{{bon_article.numero + 1}}"> Article suivant - ajouter titre</a></p>
         {% endif %}
     </main>
-    <footer><p><b>2022 - OrdinaLand</b></p>
+    <footer>
+        <p><b>2022 - OrdinaLand</b></p>
     </footer>
 
 </body>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Ordinaland</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-     <style>footer {position:fixed;}</style>
 </head>
 <body>
 
@@ -29,13 +28,12 @@
                 <a href = "/article/{{pages[i].numero}}">Lire l'article</a>
             </article>
             {% endfor %}
-            <nav>
+            <div class="pagination">
                 {% for i in range(nbr_pages) %}
                 <a href="/blog/{{i+1}}"> {{i+1}} </a>
                 {% endfor %}
-            </nav>
+            </div>
         </section>
-
     </main>
     <footer>
         <p><b>2022 - OrdinaLand</b></p>

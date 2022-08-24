@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ordinaland</title>
+    <title>OrdinaLand</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 </head>
 <body>
-    <nav>OrdinaLand <a class=boutton href = "/">Acceuil</a>
+   <nav>OrdinaLand <a class=boutton href = "/">Acceuil</a>
                  <a class=boutton href = "/construire-ordinateur">Construire un ordinateur</a>
                  <a class=boutton href = "/blog/1">Blog</a>
                  <a class=boutton href = /glossaire>Glossaire</a>
@@ -16,13 +16,20 @@
         <h1>OrdinaLand</h1>
         <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
     </header>
-    <h2><b>Glossaire</b></h2>
-    {% for i in mot %}
-    <ul class="mot">
-        <li><a class="mot" href="/glossaire/{{i}}">{{i}}</a></li>
-    </ul>
-    {% endfor %}
-    <footer><p><b>2022 - OrdinaLand</b></p>
+
+    <p id="definition">Definition : {{terme}}</p>
+    <p id="texte">{{texte}}</p>
+    <a id="source" href ={{source}}>{{source}}</a>
+   <ul><b>mots reliés</b></ul>
+   {% for i in mots_relies %}
+   <li><a href="/glossaire/{{i}}">{{i}}</a></li>
+   {% endfor %}
+
+
+   <a id="lien_glossaire" href = "/glossaire">Retour au Glossaire</a>
+
+    <footer>
+        <p><b>2022 - OrdinaLand</b></p>
     </footer>
 
 </body>
