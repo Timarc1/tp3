@@ -32,7 +32,11 @@
             {% endfor %}
             <div class="pagination">
                 {% for i in range(nbr_pages) %}
-                <a href="/blog/{{i+1}}"> {{i+1}} </a>
+                    {% if i != page_courante-1: %}
+                        <a href="/blog/{{i+1}}"> {{i+1}} </a>
+                    {% else: %}
+                        <a>{{i+1}}</a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </section>
