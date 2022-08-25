@@ -22,7 +22,11 @@
     <a id="source" href ={{source}}>{{source}}</a>
    <ul><b>mots reliés</b></ul>
    {% for i in mots_relies %}
+   {% if i == mot: %}
+   <a>{{i}}</a>
+   {% else: %}
    <li><a href="/glossaire/{{i}}">{{i}}</a></li>
+   {% endif %}
    {% endfor %}
 
 

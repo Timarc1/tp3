@@ -23,11 +23,12 @@ def blog(n):
     nbr_pages = math.ceil(len(articles) / 3)
     pages = paginate.Page(articles, n, 3)
     long = len(pages)
+    page_courante = int(n)
 
     return render_template("blog.html",
                            pages=pages,
                            long=long,
-                           nbr_pages=nbr_pages)
+                           nbr_pages=nbr_pages,page_courante=page_courante)
 
 @app.route("/article/<numero>")
 def article(numero):
@@ -45,19 +46,19 @@ def construire():
 
 @app.route("/afficher-ordinateur", methods=["POST"])
 def afficherOrdinateur():
+    reponses = []
     composantes = []
-    c = []
     for key in choix_composantes:
         try:
-            composantes.append(request.form[key])
+            reponses.append(request.form[key])
         except:
             pass
-    for composante in composantes:
+    for reponse in reponses:
         for key,values in choix_composantes.items():
-            for t in values:
-                if composante == t.description:
-                    c.append(Composante(t.description,t.prix,t.lien))
-    ordi = Ordinateur(c)
+            for composante in values:
+                if reponse == composante.description:
+                    composantes.append(Composante(composante.description,composante.prix,composante.lien))
+    ordi = Ordinateur(composantes)
 
     code_postale = request.form["postal"]
     code_postale = code_postale.replace(" ", "")
@@ -97,7 +98,7 @@ def explication(mot):
                            terme=terme,
                            texte=texte,
                            source=source,
-                           mots_relies=mots_relies)
+                           mots_relies=mots_relies,mot=mot)
 
 
 if __name__ == "__main__":
