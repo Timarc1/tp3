@@ -59,15 +59,15 @@ def afficherOrdinateur():
                     c.append(Composante(t.description,t.prix,t.lien))
     ordi = Ordinateur(c)
 
-    code_postale = request.form["postal"]
-    code_postale = code_postale.replace(" ", "")
-    if len(code_postale) == 6 and code_postale[:6:2].isalpha() and code_postale[1:6:2].isnumeric():
-        code_postale = True
+    code_postal = request.form["postal"]
+    code_postal = code_postal.replace(" ", "")
+    if len(code_postal) == 6 and code_postal[:6:2].isalpha() and code_postal[1:6:2].isnumeric():
+        code_postal = True
     else:
-        code_postale= False
+        code_postal= False
     return render_template("afficher-ordinateur.html",
                            ordi=ordi,
-                           code_postale=code_postale)
+                           code_postale=code_postal)
 
 
 @app.route("/contact")
