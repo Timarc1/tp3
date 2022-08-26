@@ -14,7 +14,7 @@ nav {
     background-color: #A2572D;
     padding-top: 25px;
     padding-bottom: 30px;
-    border:10px;
+
     }
 
 .boutton {
@@ -86,9 +86,7 @@ footer {
     }
 
 
-li {
-list-style-type: none;
-}
+
 
 
 #contacter {
@@ -114,6 +112,11 @@ list-style-type: none;
 
 #description {
     font-size: 18px;
+}
+
+#page_monter {
+    border-bottom: outset #E37383;
+    padding-bottom: 20px;
 }
 
 .ordinateur {
@@ -146,6 +149,9 @@ list-style-type: none;
     box-sizing: border-box;
     text-decoration: none;
     border:  .1em solid var(--clr-neon);
+
+
+
 
 
 

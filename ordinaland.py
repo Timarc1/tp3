@@ -13,9 +13,11 @@ class Definition:
          sont présents dans le texte """
         termes = []
         for definition in glossaire:
-            if definition.terme in self.texte:
+            if definition.terme in self.texte or definition.terme.upper() in self.texte:
                 termes.append(definition.terme)
         return termes
+
+
 
 
 class Article:

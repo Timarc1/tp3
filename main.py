@@ -62,6 +62,7 @@ def afficherOrdinateur():
                 if reponse == composante.description:
                     composantes.append(Composante(composante.description,composante.prix,composante.lien))
     ordi = Ordinateur(composantes)
+    nb_composante = len(composantes)
 
     code_postal = request.form["postal"]
     code_postal = code_postal.replace(" ", "")
@@ -75,7 +76,8 @@ def afficherOrdinateur():
                            ordi=ordi,
                            code_postale=code_postal,
                            prix_total=prix_total,
-                           livraison=livraison)
+                           livraison=livraison,
+                           nb_composante=nb_composante)
 
 
 @app.route("/contact")

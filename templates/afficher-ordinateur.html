@@ -20,9 +20,14 @@
     </header>
     <main>
     <h1>Votre ordinateur</h1>
+        {% if nb_composante ==0 %}
+            <p>Vous avez selectionné aucune composante</p>
+            <a href = "/construire-ordinateur">Retourner à la page de construction</a>
+        {% else %}
         <div class="ordinateur">
+
     {% for composante in ordi.composantes %}
-    <p>- {{composante.description}}</p>
+    <li class="composante"> {{composante.description}}</li>
     {% endfor %}
 
             {% if code_postale ==true %}
@@ -37,6 +42,7 @@
     <p>Taxes : {{ordi.taxes()}}$</p>
     <p>Total : {{ordi.total()}}$</p>
         {% endif %}
+                    {% endif %}
                 </div>
             </div>
 
