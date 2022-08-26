@@ -21,7 +21,6 @@ nav {
     text-decoration: none;
     border: thick double #582D15;
     font-size: 20px;
-    width: 500px;
     margin: 30px;
     background-color: #923500;
     color: black;
@@ -85,7 +84,9 @@ footer {
     margin-top: 50px;
     }
 
-
+#jour {
+    list-style: none;
+}
 
 
 
@@ -141,25 +142,12 @@ footer {
 }
 
 
-:root{--clr-neon:#04d9ff;
---clr-bg:#00051d;}
+
 .mot {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border:  .1em solid var(--clr-neon);
-
-
-
-
-
-
-
-
-
-
-
-
+    background: #F8C0A0;
+    border: outset #E37383;
+    margin: 20px;
+    margin-right: 85%;
+    padding-bottom: 10px;
 }
 

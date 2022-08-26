@@ -22,12 +22,20 @@
     <p id="definition">Definition : {{terme}}</p>
     <p id="texte">{{texte}}</p>
     <a id="source" href ={{source}}>{{source}}</a>
-   <ul><b>mots reliés</b></ul>
-   {% for i in mots_relies %}
-   {% if i != mot: %}
-   <li><a href="/glossaire/{{i}}">{{i}}</a></li>
+   {% if nb_mot > 0  %}
+
+        <div class = mot>
+        <ul><b>mots reliés</b></ul>
+        {% for i in mots_relies %}
+            {% if i != mot: %}
+                <li><a href="/glossaire/{{i}}">{{i}}</a></li>
+            {% endif %}
+        {% endfor %}
+
+       </div>
+   {% else %}
+   <p></p>
    {% endif %}
-   {% endfor %}
 
 
    <a id="lien_glossaire" href = "/glossaire">Retour au Glossaire</a>

@@ -1,7 +1,7 @@
 import math
 import paginate
 from ordinaland import *
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,redirect
 app = Flask(__name__)
 from math import ceil
 
@@ -16,7 +16,7 @@ def index():
     liste_articles = [article1,article2,article3]
 
     return render_template("index.html"
-                           ,liste_articles=liste_articles)
+                               ,liste_articles=liste_articles)
 
 @app.route("/blog/<n>")
 def blog(n):
@@ -91,23 +91,44 @@ def mot_cle():
     for definition in glossaire:
         mot.append(definition.terme)
     return render_template("glossaire.html",
-                           mot=mot)
+                           mot=mot,)
 
 @app.route("/glossaire/<mot>")
 def explication(mot):
-
     for definition in glossaire:
         if mot == definition.terme:
             terme = definition.terme
             texte = definition.texte
             source = definition.source
             mots_relies = definition.termes_relies()
+    if mot in mots_relies :
+        mots_relies.remove(mot)
+    nb_mot= len(mots_relies)
 
     return render_template("definition.html",
                            terme=terme,
                            texte=texte,
                            source=source,
-                           mots_relies=mots_relies,mot=mot)
+                           mots_relies=mots_relies,
+                           mot=mot,
+                           nb_mot=nb_mot)
+"""  a effacer
+
+
+@app.route("/<mot>")
+def redirect_view(mot):
+    response = redirect('/')
+    return response
+
+@app.route("/contact/<mot>")
+def redirect_view2(mot):
+    response = redirect('/contact')
+    return response
+
+@app.route("/blog/<mot>")
+def redirect_view3(mot):
+    response = redirect("/blog")
+    return response """
 
 
 if __name__ == "__main__":

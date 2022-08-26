@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Ordinaland</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-    <style>footer {position:fixed;
+    <style>footer {
         bottom:0;}</style>
 </head>
 <body>
@@ -19,11 +19,15 @@
         <p id="slogan"><u><b>La</b></u> référence en matière d'ordinateurs</p>
     </header>
     <h2><b>Glossaire</b></h2>
+    <div class = mot>
     {% for i in mot %}
-    <ul class="mot">
-        <li><a class="mot" href="/glossaire/{{i}}">{{i}}</a></li>
+
+    <ul>
+        <li><a href="/glossaire/{{i}}">{{i}}</a></li>
     </ul>
+
     {% endfor %}
+        </div>
     <footer><p><b>2022 - OrdinaLand</b></p>
     </footer>
 
