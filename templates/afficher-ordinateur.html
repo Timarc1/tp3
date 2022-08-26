@@ -20,11 +20,13 @@
     </header>
     <main>
     <h1>Votre ordinateur</h1>
+        <div class="ordinateur">
     {% for composante in ordi.composantes %}
     <p>- {{composante.description}}</p>
     {% endfor %}
         {% if code_postale ==true %}
-        <p>Livraison : 12.99$</p>
+
+            <div class="total">
         <p>Sous-total : {{ordi.sous_total()}}$</p>
         <p>Taxes : {{ordi.taxes()}}$</p>
         <p>Livraison : 12.99$</p>
@@ -34,6 +36,8 @@
     <p>Taxes : {{ordi.taxes()}}$</p>
     <p>Total : {{ordi.total()}}$</p>
         {% endif %}
+                </div>
+            </div>
 </main>
     <footer>
         <p><b>2022 - OrdinaLand</b></p>

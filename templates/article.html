@@ -29,7 +29,7 @@
         {% if bon_article.numero > 0 %}
         <p class="plus_article"><a href="/article/{{bon_article.numero - 1}}">Article précédent - ajouter titre</a></p>
         {% endif %}
-        {% if bon_article.numero < 12 %}
+        {% if bon_article.numero < nb_max %}
         <p class="plus_article"><a href="/article/{{bon_article.numero + 1}}"> Article suivant - ajouter titre</a></p>
         {% endif %}
     </main>

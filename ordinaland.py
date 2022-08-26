@@ -8,17 +8,14 @@ class Definition:
         self.source = source
 
     def termes_relies(self):
-        # TODO : passer à travers tous les termes définis dans le
-        # tableau `glossaire` et retourner un tableau de termes qui
-        # sont présents dans le texte
+        """passe à travers tous les termes définis dans le
+        tableau `glossaire` et retourner un tableau de termes qui
+         sont présents dans le texte """
         termes = []
         for definition in glossaire:
             if definition.terme in self.texte:
                 termes.append(definition.terme)
         return termes
-        
-
-        #return []
 
 
 class Article:
@@ -310,7 +307,6 @@ Assumenda vitae animi deleniti accusantium. Excepturi dolore sequi odit. Corrupt
 Ullam non modi accusamus repellat numquam dolorem. Eos a culpa corrupti ad ipsam excepturi numquam. Voluptatem quis assumenda voluptatem eveniet cum error omnis. Accusantium blanditiis et sint sint velit sint expedita. Animi aliquid natus odit non non voluptatem neque reprehenderit. Amet et eum rerum non modi cum.
 
 """, "mouse.png"),
-
 
 ]
 

@@ -111,12 +111,33 @@ list-style-type: none;
     margin-left: 20px;
     font-size: 20px;
 }
-.pagination a {
-color: black;
-float: left;
-padding: 8px 16px;
-text-decoration: none;
+
+#description {
+    font-size: 18px;
 }
+
+.ordinateur {
+    margin:20px;
+    padding:25px;
+    background-color: #F8C0A0;
+    border: outset #E37383;
+    margin-right: 50%;
+}
+
+.total {
+    margin-top : 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#livraison {
+    margin-top:25px;
+    padding: 10px;
+    border:outset #E37383;
+    margin-right: 60%;
+}
+
+
 :root{--clr-neon:#04d9ff;
 --clr-bg:#00051d;}
 .mot {
@@ -125,6 +146,10 @@ text-decoration: none;
     box-sizing: border-box;
     text-decoration: none;
     border:  .1em solid var(--clr-neon);
+
+
+
+
 
 
 

@@ -24,18 +24,19 @@ def blog(n):
     pages = paginate.Page(articles, n, 3)
     long = len(pages)
     page_courante = int(n)
-
     return render_template("blog.html",
                            pages=pages,
                            long=long,
-                           nbr_pages=nbr_pages,page_courante=page_courante)
+                           nbr_pages=nbr_pages,page_courante=page_courante,)
 
 @app.route("/article/<numero>")
 def article(numero):
     numero = int(numero)
     bon_article = articles[numero]
+    nb_max = len(articles)
     return render_template("article.html",
-                           bon_article=bon_article)
+                           bon_article=bon_article,
+                           nb_max=nb_max)
 
 
 @app.route("/construire-ordinateur")
