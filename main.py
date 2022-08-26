@@ -67,11 +67,14 @@ def afficherOrdinateur():
     code_postal = code_postal.replace(" ", "")
     if len(code_postal) == 6 and code_postal[:6:2].isalpha() and code_postal[1:6:2].isnumeric():
         code_postal = True
+        prix_total = round(ordi.total()+livraison, 2)
     else:
         code_postal= False
+        prix_total = ordi.total()
     return render_template("afficher-ordinateur.html",
                            ordi=ordi,
                            code_postale=code_postal,
+                           prix_total=prix_total,
                            livraison=livraison)
 
 
