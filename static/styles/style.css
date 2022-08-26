@@ -127,6 +127,7 @@ list-style-type: none;
 .total {
     text-align:center;
     font-weight: bold;
+    margin-top: 50px;
 }
 
 #livraison {

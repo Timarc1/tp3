@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>OrdinaLand</title>
  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-    <style>footer {position:fixed;
+    <style>footer {
         bottom:0;}</style>
 </head>
 <body>
@@ -33,9 +33,9 @@
             <p>Total : {{(ordi.total()+12.99)}}$</p>
             {% else %}
                 <div class="total">
-                <p>Sous-total : {{ordi.sous_total()}}$</p>
-                <p>Taxes : {{ordi.taxes()}}$</p>
-                <p>Total : {{ordi.total()}}$</p>
+    <p>Sous-total : {{ordi.sous_total()}}$</p>
+    <p>Taxes : {{ordi.taxes()}}$</p>
+    <p>Total : {{ordi.total()}}$</p>
 
         {% endif %}
 
