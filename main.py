@@ -33,10 +33,11 @@ def blog(n):
 def article(numero):
     numero = int(numero)
     bon_article = articles[numero]
-    nb_max = len(articles)
+    nb_max = len(articles)-1
     return render_template("article.html",
                            bon_article=bon_article,
-                           nb_max=nb_max)
+                           nb_max=nb_max,
+                           articles=articles)
 
 
 @app.route("/construire-ordinateur")
@@ -49,6 +50,7 @@ def construire():
 def afficherOrdinateur():
     reponses = []
     composantes = []
+    livraison = round(12.99, 2)
     for key in choix_composantes:
         try:
             reponses.append(request.form[key])
@@ -69,7 +71,8 @@ def afficherOrdinateur():
         code_postal= False
     return render_template("afficher-ordinateur.html",
                            ordi=ordi,
-                           code_postale=code_postal)
+                           code_postale=code_postal,
+                           livraison=livraison)
 
 
 @app.route("/contact")

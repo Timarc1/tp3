@@ -29,16 +29,14 @@
             <div class="total">
             <p>Sous-total : {{ordi.sous_total()}}$</p>
             <p>Taxes : {{ordi.taxes()}}$</p>
-            <p>Livraison : 12.99$</p>
-            <p>Total : {{(ordi.total()+12.99)}}$</p>
+            <p>Livraison : {{livraison}}$</p>
+            <p>Total : {{(ordi.total()+livraison)}}$</p>
             {% else %}
                 <div class="total">
     <p>Sous-total : {{ordi.sous_total()}}$</p>
     <p>Taxes : {{ordi.taxes()}}$</p>
     <p>Total : {{ordi.total()}}$</p>
-
         {% endif %}
-
                 </div>
             </div>
 
